@@ -19,11 +19,11 @@
 
         base {
             bindings = <
-&kp GRAVE  &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                          &kp N6  &kp N7     &kp N8     &kp N9    &kp N0    &kp BSPC
-&kp ESC    &kp Q   &kp W     &kp E     &kp R      &kp T                           &kp Y   &kp U      &kp I      &kp O     &kp P     &kp BSLH
-&kp TAB    &kp A   &kp S     &kp D     &kp F      &kp G                           &kp H   &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z   &kp X     &kp C     &kp V      &kp B   &kp LBKT     &kp RBKT   &kp N   &kp M      &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-                   &kp LGUI  &kp LALT  &kp LCTRL  &mo 1   &kp SPACE    &kp ENTER  &mo 2   &kp RCTRL  &kp RALT   &kp RGUI
+&kp GRAVE      &kp N1  &kp N2         &kp N3    &kp N4     &kp N5                         &kp N6  &kp N7     &kp N8      &kp N9     &kp N0    &kp MINUS
+&kp ESC        &kp W   &kp G          &kp D     &kp F      &kp B                          &kp Q   &kp L      &kp U       &kp O      &kp Y     &kp BACKSPACE
+&kp BACKSLASH  &kp R   &kp S          &kp T     &kp H      &kp K                          &kp J   &kp N      &kp E       &kp A      &kp I     &kp SEMI
+&kp TAB        &kp X   &kp C          &kp M     &kp P      &kp V   &kp LBKT     &kp RBKT  &kp Z   &kp COMMA  &kp PERIOD  &kp SQT    &kp FSLH  &kp ENTER
+                       &kp LG(SPACE)  &kp LGUI  &kp LSHFT  &mo 1   &kp SPACE    &kp RALT  &mo 2   &kp RSHFT  &kp RCTRL   &kp EQUAL
             >;
 
             display-name = "Base";
@@ -38,11 +38,11 @@
 
         nav {
             bindings = <
-&kp F1  &kp F2  &kp F3        &kp F4    &kp F5         &kp F6                     &kp F7           &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
-&trans  &trans  &kp HOME      &kp UP    &kp END        &kp INS                    &kp PG_UP        &kp N7  &kp N8  &kp N9   &trans   &trans
-&trans  &trans  &kp LEFT      &kp DOWN  &kp RIGHT      &kp RET                    &kp PG_DN        &kp N4  &kp N5  &kp N6   &trans   &trans
-&trans  &trans  &kp LC(LEFT)  &kp CAPS  &kp LC(RIGHT)  &kp DEL  &trans    &trans  &kp PRINTSCREEN  &kp N1  &kp N2  &kp N3   &trans   &trans
-                &trans        &trans    &trans         &trans   &trans    &trans  &mo 3            &trans  &kp N0  &trans
+&trans  &kp F1                &kp F2                 &kp F3            &kp F4             &kp F5                            &kp F6        &kp F7     &kp F8        &kp F9           &kp F10        &trans
+&trans  &kp N1                &kp NUMBER_2           &kp NUMBER_3      &kp NUMBER_4       &kp NUMBER_5                      &kp NUMBER_6  &kp N7     &kp N8        &kp N9           &kp NUMBER_0   &kp DEL
+&trans  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp MINUS                         &kp LEFT      &kp DOWN   &kp UP_ARROW  &kp RIGHT_ARROW  &kp SLASH      &trans
+&trans  &kp LT                &kp GT                 &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp EQUAL     &kp F11    &kp F12  &kp HOME      &kp PG_DN  &kp PG_UP     &kp END          &kp BACKSLASH  &trans
+                              &trans                 &trans            &trans             &trans        &trans     &trans   &mo 3         &trans     &trans        &trans
             >;
 
             display-name = "Nav";
