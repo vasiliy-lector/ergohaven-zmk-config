@@ -93,8 +93,8 @@
 &kp GRAVE  &kp N1    &kp N2    &kp N3    &kp N4     &kp N5                            &kp N6  &kp N7     &kp N8     &kp N9     &kp N0  &kp MINUS
 &kp ESC    &kp I     &kp U     &kp L     &kp A      &kp COMMA                         &kp W   &kp K      &kp E      &kp J      &kp S   &kp BSPC
 &kp BSLH   &kp H     &kp C     &kp N     &kp LBKT   &kp R                             &kp Q   &kp Y      &kp T      &kp F      &kp B   &kp O
-&kp TAB    &kp SEMI  &kp X     &kp V     &kp G      &kp D      &kp BSLH     &kp SQT   &kp P   &kp FSLH   &kp Z      &kp DOT    &kp M   &kp RET
-                     &en_lang  &kp LGUI  &kp LSHFT  &mo 1      &kp SPACE    &kp RALT  &mo 2   &kp RSHFT  &kp LCTRL  &kp EQUAL
+&kp TAB    &kp SEMI  &kp X     &kp V     &kp G      &kp D      &kp GRAVE    &kp SQT   &kp P   &kp FSLH   &kp Z      &kp DOT    &kp M   &kp RET
+                     &en_lang  &kp LGUI  &kp LSHFT  &mo 1      &kp SPACE    &kp RALT  &trans  &kp RSHFT  &kp LCTRL  &kp EQUAL
             >;
         };
     };
