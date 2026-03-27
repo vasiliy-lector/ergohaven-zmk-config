@@ -32,14 +32,19 @@
         ru_cmd: cmd {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LGUI &mo 5>;
+            bindings = <&macro_press>, <&kp LGUI &mo 5>, <&macro_release>;
+
             label = "CMD";
         };
 
         ru_ctrl: ctrl {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&ru_ctrl &mo 5>;
+            bindings =
+                <&macro_press>,
+                <&kp RIGHT_CONTROL &mo 5>,
+                <&macro_release>;
+
             label = "CTRL";
         };
     };
