@@ -14,16 +14,32 @@
         };
     };
 
+    macros {
+        ru_lang: ru_lang {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(SPACE) &to 4>;
+            label = "RU_LANG";
+        };
+
+        en_lang: en_lang {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(SPACE) &to 0>;
+            label = "EN_LANG";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         base {
             bindings = <
-&kp GRAVE      &kp N1  &kp N2         &kp N3    &kp N4     &kp N5                         &kp N6  &kp N7     &kp N8      &kp N9     &kp N0    &kp MINUS
-&kp ESC        &kp W   &kp G          &kp D     &kp F      &kp B                          &kp Q   &kp L      &kp U       &kp O      &kp Y     &kp BACKSPACE
-&kp BACKSLASH  &kp R   &kp S          &kp T     &kp H      &kp K                          &kp J   &kp N      &kp E       &kp A      &kp I     &kp SEMI
-&kp TAB        &kp X   &kp C          &kp M     &kp P      &kp V   &kp LBKT     &kp RBKT  &kp Z   &kp COMMA  &kp PERIOD  &kp SQT    &kp FSLH  &kp ENTER
-                       &kp LG(SPACE)  &kp LGUI  &kp LSHFT  &mo 1   &kp SPACE    &kp RALT  &mo 2   &kp RSHFT  &kp RCTRL   &kp EQUAL
+&kp GRAVE      &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                         &kp N6  &kp N7     &kp N8      &kp N9     &kp N0    &kp MINUS
+&kp ESC        &kp W   &kp G     &kp D     &kp F      &kp B                          &kp Q   &kp L      &kp U       &kp O      &kp Y     &kp BACKSPACE
+&kp BACKSLASH  &kp R   &kp S     &kp T     &kp H      &kp K                          &kp J   &kp N      &kp E       &kp A      &kp I     &kp SEMI
+&kp TAB        &kp X   &kp C     &kp M     &kp P      &kp V   &kp LBKT     &kp RBKT  &kp Z   &kp COMMA  &kp PERIOD  &kp SQT    &kp FSLH  &kp ENTER
+                       &ru_lang  &kp LGUI  &kp LSHFT  &mo 1   &kp SPACE    &kp RALT  &mo 2   &kp RSHFT  &kp RCTRL   &kp EQUAL
             >;
 
             display-name = "Base";
@@ -70,6 +86,16 @@
             >;
 
             display-name = "Adjust";
+        };
+
+        russian {
+            bindings = <
+&kp GRAVE  &kp N1    &kp N2    &kp N3    &kp N4     &kp N5                            &kp N6  &kp N7     &kp N8     &kp N9     &kp N0  &kp MINUS
+&kp ESC    &kp I     &kp U     &kp L     &kp A      &kp COMMA                         &kp W   &kp K      &kp E      &kp J      &kp S   &kp BSPC
+&kp BSLH   &kp H     &kp C     &kp N     &kp LBKT   &kp R                             &kp Q   &kp Y      &kp T      &kp F      &kp B   &kp O
+&kp TAB    &kp SEMI  &kp X     &kp V     &kp G      &kp D      &kp BSLH     &kp SQT   &kp P   &kp FSLH   &kp Z      &kp DOT    &kp M   &kp RET
+                     &en_lang  &kp LGUI  &kp LSHFT  &trans     &kp SPACE    &kp RALT  &trans  &kp RSHFT  &kp LCTRL  &kp EQUAL
+            >;
         };
     };
 };
