@@ -40,14 +40,14 @@
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings =
-                <&tg_lang>,
+                <&kp LG(SPACE)>,
                 <&macro_press>,
                 <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
                 <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
                 <&macro_tap>,
-                <&tg_lang>;
+                <&kp RG(SPACE)>;
 
             label = "EN";
         };
@@ -77,11 +77,11 @@
 
         ru {
             bindings = <
-&kp GRAVE  &kp N1               &kp N2    &kp N3  &kp N4     &kp N5                            &kp N6  &kp N7     &kp N8  &kp N9     &kp N0  &kp MINUS
-&kp ESC    &kp RU_CYRILLIC_SHA  &kp U     &kp L   &kp A      &kp COMMA                         &kp W   &kp K      &kp E   &kp J      &kp S   &kp BSPC
-&kp BSLH   &kp H                &kp C     &kp N   &kp LBKT   &kp R                             &kp Q   &kp Y      &kp T   &kp F      &kp B   &kp O
-&kp TAB    &kp SEMI             &kp X     &kp V   &kp G      &kp D      &kp GRAVE    &kp SQT   &kp P   &kp FSLH   &kp Z   &kp DOT    &kp M   &kp RET
-                                &en_lang  &mo 7   &kp LSHFT  &mo 3      &kp SPACE    &kp RALT  &mo 5   &kp RSHFT  &mo 8   &kp EQUAL
+&kp GRAVE      &kp N1               &kp N2               &kp N3              &kp N4              &kp N5                                                       &kp N6                   &kp N7              &kp N8              &kp N9              &kp N0                     &kp MINUS
+&kp ESC        &kp RU_CYRILLIC_SHA  &kp RU_CYRILLIC_GHE  &kp RU_CYRILLIC_DE  &kp RU_CYRILLIC_EF  &kp RU_CYRILLIC_BE                                           &kp RU_CYRILLIC_TSE      &kp RU_CYRILLIC_EL  &kp RU_CYRILLIC_U   &kp RU_CYRILLIC_O   &kp RU_CYRILLIC_YERU       &kp BSPC
+&en BACKSLASH  &kp RU_CYRILLIC_ER   &kp RU_CYRILLIC_ES   &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_HA  &kp RU_CYRILLIC_KA                                           &kp RU_CYRILLIC_SHORT_I  &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_IE  &kp RU_CYRILLIC_A   &kp RU_CYRILLIC_I          &kp RU_CYRILLIC_SHCHA
+&kp TAB        &kp RU_CYRILLIC_ZHE  &kp RU_CYRILLIC_CHE  &kp RU_CYRILLIC_EM  &kp RU_CYRILLIC_PE  &kp RU_CYRILLIC_VE  &kp RU_CYRILLIC_IO    &kp RU_CYRILLIC_E  &kp RU_CYRILLIC_ZE       &kp RU_PERIOD       &kp RU_CYRILLIC_YA  &kp RU_CYRILLIC_YU  &kp RU_CYRILLIC_SOFT_SIGN  &kp RET
+                                    &en_lang             &mo 7               &kp LSHFT           &mo 3               &kp SPACE             &kp RALT           &mo 5                    &kp RSHFT           &mo 8               &kp EQUAL
             >;
         };
 
