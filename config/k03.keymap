@@ -34,7 +34,7 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LG(LEFT_GUI)>,
+                <&kp LEFT_GUI>,
                 <&macro_tap>,
                 <&kp SPACE>,
                 <&macro_release>;
