@@ -52,6 +52,8 @@
                 <&tg_lang>;
 
             label = "EN";
+            wait-ms = <30>;
+            tap-ms = <30>;
         };
     };
 
