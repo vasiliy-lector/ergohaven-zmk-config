@@ -28,25 +28,6 @@
             bindings = <&kp LG(SPACE) &to 0>;
             label = "EN_LANG";
         };
-
-        ru_cmd: cmd {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press>, <&kp LGUI &mo 5>, <&macro_release>;
-
-            label = "CMD";
-        };
-
-        ru_ctrl: ctrl {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp RIGHT_CONTROL &mo 5>,
-                <&macro_release>;
-
-            label = "CTRL";
-        };
     };
 
     keymap {
@@ -73,11 +54,11 @@
 
         russian {
             bindings = <
-&kp GRAVE  &kp N1    &kp N2    &kp N3   &kp N4     &kp N5                            &kp N6  &kp N7     &kp N8    &kp N9     &kp N0  &kp MINUS
-&kp ESC    &kp I     &kp U     &kp L    &kp A      &kp COMMA                         &kp W   &kp K      &kp E     &kp J      &kp S   &kp BSPC
-&kp BSLH   &kp H     &kp C     &kp N    &kp LBKT   &kp R                             &kp Q   &kp Y      &kp T     &kp F      &kp B   &kp O
-&kp TAB    &kp SEMI  &kp X     &kp V    &kp G      &kp D      &kp GRAVE    &kp SQT   &kp P   &kp FSLH   &kp Z     &kp DOT    &kp M   &kp RET
-                     &en_lang  &ru_cmd  &kp LSHFT  &mo 2      &kp SPACE    &kp RALT  &mo 3   &kp RSHFT  &ru_ctrl  &kp EQUAL
+&kp GRAVE  &kp N1    &kp N2    &kp N3  &kp N4     &kp N5                            &kp N6  &kp N7     &kp N8  &kp N9     &kp N0  &kp MINUS
+&kp ESC    &kp I     &kp U     &kp L   &kp A      &kp COMMA                         &kp W   &kp K      &kp E   &kp J      &kp S   &kp BSPC
+&kp BSLH   &kp H     &kp C     &kp N   &kp LBKT   &kp R                             &kp Q   &kp Y      &kp T   &kp F      &kp B   &kp O
+&kp TAB    &kp SEMI  &kp X     &kp V   &kp G      &kp D      &kp GRAVE    &kp SQT   &kp P   &kp FSLH   &kp Z   &kp DOT    &kp M   &kp RET
+                     &en_lang  &mo 5   &kp LSHFT  &mo 2      &kp SPACE    &kp RALT  &mo 3   &kp RSHFT  &mo 6   &kp EQUAL
             >;
         };
 
@@ -117,14 +98,33 @@
             display-name = "Adjust";
         };
 
-        base_for_cmds {
+        ru_cmd {
             display-name = "Base";
             bindings = <
-&kp GRAVE      &kp N1  &kp N2  &kp N3  &kp N4     &kp N5                         &kp N6  &kp N7     &kp N8      &kp N9     &kp N0    &kp MINUS
-&kp ESC        &kp W   &kp G   &kp D   &kp F      &kp B                          &kp Q   &kp L      &kp U       &kp O      &kp Y     &kp BACKSPACE
-&kp BACKSLASH  &kp R   &kp S   &kp T   &kp H      &kp K                          &kp J   &kp N      &kp E       &kp A      &kp I     &kp SEMI
-&kp TAB        &kp X   &kp C   &kp M   &kp P      &kp V   &kp LBKT     &kp RBKT  &kp Z   &kp COMMA  &kp PERIOD  &kp SQT    &kp FSLH  &kp ENTER
-                       &trans  &trans  &kp LSHFT  &trans  &kp SPACE    &kp RALT  &trans  &kp RSHFT  &kp RCTRL   &kp EQUAL
+&kp LG(GRAVE)      &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp LG(N4)     &kp LG(N5)                                 &kp LG(N6)  &kp LG(N7)     &kp LG(N8)      &kp LG(N9)     &kp LG(N0)    &kp LG(MINUS)
+&kp LG(ESC)        &kp LG(W)   &kp LG(G)   &kp LG(D)   &kp LG(F)      &kp LG(B)                                  &kp LG(Q)   &kp LG(L)      &kp LG(U)       &kp LG(O)      &kp LG(Y)     &kp LG(BACKSPACE)
+&kp LG(BACKSLASH)  &kp LG(R)   &kp LG(S)   &kp LG(T)   &kp LG(H)      &kp LG(K)                                  &kp LG(J)   &kp LG(N)      &kp LG(E)       &kp LG(A)      &kp LG(I)     &kp LG(SEMI)
+&kp LG(TAB)        &kp LG(X)   &kp LG(C)   &kp LG(M)   &kp LG(P)      &kp LG(V)   &kp LG(LBKT)     &kp LG(RBKT)  &kp LG(Z)   &kp LG(COMMA)  &kp LG(PERIOD)  &kp LG(SQT)    &kp LG(FSLH)  &kp LG(ENTER)
+                               &trans      &trans      &kp LG(LSHFT)  &trans      &kp LG(SPACE)    &kp LG(RALT)  &trans      &kp LG(RSHFT)  &kp LG(RCTRL)   &kp LG(EQUAL)
+            >;
+
+            sensor-bindings =
+                <&enc_vol>,
+                <&enc_vol>,
+                <&enc_vol>,
+                <&enc_vol>,
+                <&enc_vol>,
+                <&enc_vol>;
+        };
+
+        ru_ctrl {
+            display-name = "Base";
+            bindings = <
+&kp LC(GRAVE)      &kp LC(N1)  &kp LC(N2)  &kp LC(N3)        &kp LC(N4)     &kp LC(N5)                                 &kp LC(N6)  &kp LC(N7)     &kp LC(N8)      &kp LC(N9)     &kp LC(N0)    &kp LC(MINUS)
+&kp LC(ESC)        &kp LC(W)   &kp LC(G)   &kp LC(D)         &kp LC(F)      &kp LC(B)                                  &kp LC(Q)   &kp LC(L)      &kp LC(U)       &kp LC(O)      &kp LC(Y)     &kp LC(BACKSPACE)
+&kp LC(BACKSLASH)  &kp LC(R)   &kp LC(S)   &kp LC(T)         &kp LC(H)      &kp LC(K)                                  &kp LC(J)   &kp LC(N)      &kp LC(E)       &kp LC(A)      &kp LC(I)     &kp LC(SEMI)
+&kp LC(TAB)        &kp LC(X)   &kp LC(C)   &kp LC(M)         &kp LC(P)      &kp LC(V)   &kp LC(LBKT)     &kp LC(RBKT)  &kp LC(Z)   &kp LC(COMMA)  &kp LC(PERIOD)  &kp LC(SQT)    &kp LC(FSLH)  &kp LC(ENTER)
+                               &trans      &kp LC(LEFT_GUI)  &kp LC(LSHFT)  &trans      &kp LC(SPACE)    &kp LC(RALT)  &trans      &kp LC(RSHFT)  &trans          &kp LC(EQUAL)
             >;
 
             sensor-bindings =
