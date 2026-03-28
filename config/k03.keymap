@@ -32,8 +32,16 @@
         tg_lang: tg_lang {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LG(SPACE)>;
+            bindings =
+                <&macro_press>,
+                <&kp LG(LEFT_GUI)>,
+                <&macro_tap>,
+                <&kp SPACE>,
+                <&macro_release>;
+
             label = "TG_LANG";
+            wait-ms = <30>;
+            tap-ms = <30>;
         };
 
         mo_lang: en {
@@ -47,10 +55,11 @@
                 <&macro_release>,
                 <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
                 <&macro_tap>,
-                <&macro_press>,
                 <&tg_lang>;
 
             label = "EN";
+            wait-ms = <30>;
+            tap-ms = <30>;
         };
     };
 
