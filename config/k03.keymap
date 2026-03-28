@@ -18,28 +18,51 @@
         ru_lang: ru_lang {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LG(SPACE) &to 1>;
+            bindings = <&to 1 &tg_lang>;
             label = "RU_LANG";
         };
 
         en_lang: en_lang {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LG(SPACE) &to 0>;
+            bindings = <&to 0 &tg_lang>;
             label = "EN_LANG";
+        };
+
+        tg_lang: tg_lang {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(SPACE)>;
+            label = "TG_LANG";
+        };
+
+        en: en {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&tg_lang>,
+                <&macro_press>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_tap>,
+                <&tg_lang>;
+
+            label = "EN";
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        base {
+        en {
             bindings = <
 &kp GRAVE      &kp N1  &kp N2    &kp N3    &kp N4     &kp N5                         &kp N6  &kp N7     &kp N8      &kp N9     &kp N0    &kp MINUS
 &kp ESC        &kp W   &kp G     &kp D     &kp F      &kp B                          &kp Q   &kp L      &kp U       &kp O      &kp Y     &kp BACKSPACE
 &kp BACKSLASH  &kp R   &kp S     &kp T     &kp H      &kp K                          &kp J   &kp N      &kp E       &kp A      &kp I     &kp SEMI
 &kp TAB        &kp X   &kp C     &kp M     &kp P      &kp V   &kp LBKT     &kp RBKT  &kp Z   &kp COMMA  &kp PERIOD  &kp SQT    &kp FSLH  &kp ENTER
-                       &ru_lang  &kp LGUI  &kp LSHFT  &mo 2   &kp SPACE    &kp RALT  &mo 3   &kp RSHFT  &kp RCTRL   &kp EQUAL
+                       &ru_lang  &kp LGUI  &kp LSHFT  &mo 2   &kp SPACE    &kp RALT  &mo 4   &kp RSHFT  &kp RCTRL   &kp EQUAL
             >;
 
             display-name = "Base";
@@ -52,38 +75,60 @@
                 <&enc_vol>;
         };
 
-        russian {
+        ru {
             bindings = <
-&kp GRAVE  &kp N1    &kp N2    &kp N3  &kp N4     &kp N5                            &kp N6  &kp N7     &kp N8  &kp N9     &kp N0  &kp MINUS
-&kp ESC    &kp I     &kp U     &kp L   &kp A      &kp COMMA                         &kp W   &kp K      &kp E   &kp J      &kp S   &kp BSPC
-&kp BSLH   &kp H     &kp C     &kp N   &kp LBKT   &kp R                             &kp Q   &kp Y      &kp T   &kp F      &kp B   &kp O
-&kp TAB    &kp SEMI  &kp X     &kp V   &kp G      &kp D      &kp GRAVE    &kp SQT   &kp P   &kp FSLH   &kp Z   &kp DOT    &kp M   &kp RET
-                     &en_lang  &mo 5   &kp LSHFT  &mo 2      &kp SPACE    &kp RALT  &mo 3   &kp RSHFT  &mo 6   &kp EQUAL
+&kp GRAVE  &kp N1               &kp N2    &kp N3  &kp N4     &kp N5                            &kp N6  &kp N7     &kp N8  &kp N9     &kp N0  &kp MINUS
+&kp ESC    &kp RU_CYRILLIC_SHA  &kp U     &kp L   &kp A      &kp COMMA                         &kp W   &kp K      &kp E   &kp J      &kp S   &kp BSPC
+&kp BSLH   &kp H                &kp C     &kp N   &kp LBKT   &kp R                             &kp Q   &kp Y      &kp T   &kp F      &kp B   &kp O
+&kp TAB    &kp SEMI             &kp X     &kp V   &kp G      &kp D      &kp GRAVE    &kp SQT   &kp P   &kp FSLH   &kp Z   &kp DOT    &kp M   &kp RET
+                                &en_lang  &mo 7   &kp LSHFT  &mo 3      &kp SPACE    &kp RALT  &mo 5   &kp RSHFT  &mo 8   &kp EQUAL
             >;
         };
 
-        nav {
+        nav_en {
             bindings = <
-&trans  &kp F1                &kp F2                 &kp F3            &kp F4             &kp F5                            &kp F6        &kp F7     &kp F8        &kp F9           &kp F10        &trans
-&trans  &kp N1                &kp NUMBER_2           &kp NUMBER_3      &kp NUMBER_4       &kp NUMBER_5                      &kp NUMBER_6  &kp N7     &kp N8        &kp N9           &kp NUMBER_0   &kp DEL
-&trans  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp MINUS                         &kp LEFT      &kp DOWN   &kp UP_ARROW  &kp RIGHT_ARROW  &kp SLASH      &trans
-&trans  &kp LT                &kp GT                 &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp EQUAL     &kp F11    &kp F12  &kp HOME      &kp PG_DN  &kp PG_UP     &kp END          &kp BACKSLASH  &trans
-                              &trans                 &trans            &trans             &trans        &trans     &trans   &mo 4         &trans     &trans        &trans
+&trans  &kp F1                &kp F2                 &kp F3            &kp F4             &kp F5                            &kp F6        &kp F7     &kp F8        &kp F9           &kp F10       &trans
+&trans  &kp N1                &kp NUMBER_2           &kp NUMBER_3      &kp NUMBER_4       &kp NUMBER_5                      &kp NUMBER_6  &kp N7     &kp N8        &kp N9           &kp NUMBER_0  &kp DEL
+&trans  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &trans                            &kp LEFT      &kp DOWN   &kp UP_ARROW  &kp RIGHT_ARROW  &trans        &trans
+&trans  &kp LT                &kp GT                 &kp LEFT_BRACE    &kp RIGHT_BRACE    &trans        &kp F11    &kp F12  &kp HOME      &kp PG_DN  &kp PG_UP     &kp END          &trans        &trans
+                              &trans                 &trans            &trans             &trans        &trans     &trans   &mo 6         &trans     &trans        &trans
             >;
 
             display-name = "Nav";
         };
 
-        sym {
+        nav_ru {
+            display-name = "Nav";
             bindings = <
-&trans  &trans    &kp AT    &kp DLLR   &kp HASH  &trans                       &trans     &trans    &kp CARET  &trans    &trans    &trans
-&trans  &trans    &kp LT    &kp EQUAL  &kp GT    &kp GRAVE                    &trans     &kp LBKT  &kp UNDER  &kp RBKT  &trans    &trans
-&trans  &kp BSLH  &kp LPAR  &kp MINUS  &kp RPAR  &kp PLUS                     &kp PRCNT  &kp LBRC  &kp SEMI   &kp RBRC  &kp EXCL  &trans
-&trans  &trans    &kp STAR  &kp COLON  &kp FSLH  &trans     &trans    &trans  &trans     &kp PIPE  &kp TILDE  &kp AMPS  &trans    &trans
-                  &trans    &trans     &trans    &mo 4      &trans    &trans  &trans     &trans    &trans     &trans
+&trans  &kp F1                &kp F2                 &kp F3            &kp F4             &kp F5                            &kp F6        &kp F7     &kp F8        &kp F9           &kp F10       &trans
+&trans  &kp N1                &kp NUMBER_2           &kp NUMBER_3      &kp NUMBER_4       &kp NUMBER_5                      &kp NUMBER_6  &kp N7     &kp N8        &kp N9           &kp NUMBER_0  &kp DEL
+&trans  &en LEFT_PARENTHESIS  &en RIGHT_PARENTHESIS  &en LEFT_BRACKET  &en RIGHT_BRACKET  &trans                            &kp LEFT      &kp DOWN   &kp UP_ARROW  &kp RIGHT_ARROW  &trans        &trans
+&trans  &en LT                &en GT                 &en LEFT_BRACE    &en RIGHT_BRACE    &trans        &kp F11    &kp F12  &kp HOME      &kp PG_DN  &kp PG_UP     &kp END          &trans        &trans
+                              &trans                 &trans            &trans             &trans        &trans     &trans   &mo 6         &trans     &trans        &trans
+            >;
+        };
+
+        sym_en {
+            bindings = <
+&trans  &trans           &trans        &trans         &trans     &trans                         &trans     &trans          &trans             &trans          &trans     &trans
+&trans  &kp EXCLAMATION  &kp AT        &kp HASH       &kp DLLR   &kp PERCENT                    &kp CARET  &kp AMPS        &kp STAR           &kp MINUS       &kp EQUAL  &trans
+&trans  &kp BACKSLASH    &kp SLASH     &kp SEMICOLON  &kp COLON  &trans                         &trans     &kp APOSTROPHE  &kp DOUBLE_QUOTES  &kp UNDERSCORE  &kp PLUS   &trans
+&trans  &kp PIPE         &kp QUESTION  &kp GRAVE      &kp TILDE  &trans       &trans    &trans  &trans     &trans          &trans             &trans          &trans     &trans
+                         &trans        &trans         &trans     &mo 6        &trans    &trans  &trans     &trans          &trans             &trans
             >;
 
             display-name = "Symbols";
+        };
+
+        sym_ru {
+            display-name = "Symbols";
+            bindings = <
+&trans  &trans           &trans        &trans         &trans     &trans                         &trans     &trans          &trans             &trans          &trans     &trans
+&trans  &en EXCLAMATION  &en AT        &en HASH       &en DLLR   &en PERCENT                    &en CARET  &en AMPS        &en STAR           &en MINUS       &en EQUAL  &trans
+&trans  &en BACKSLASH    &en SLASH     &en SEMICOLON  &en COLON  &trans                         &trans     &en APOSTROPHE  &en DOUBLE_QUOTES  &en UNDERSCORE  &en PLUS   &trans
+&trans  &en PIPE         &en QUESTION  &en GRAVE      &en TILDE  &trans       &trans    &trans  &trans     &trans          &trans             &trans          &trans     &trans
+                         &trans        &trans         &trans     &mo 6        &trans    &trans  &trans     &trans          &trans             &trans
+            >;
         };
 
         adj {
@@ -98,7 +143,7 @@
             display-name = "Adjust";
         };
 
-        en_cmd {
+        ru_cmd {
             display-name = "Base";
             bindings = <
 &kp LG(GRAVE)      &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp LG(N4)     &kp LG(N5)                                 &kp LG(N6)  &kp LG(N7)     &kp LG(N8)      &kp LG(N9)     &kp LG(N0)    &kp LG(MINUS)
@@ -117,7 +162,7 @@
                 <&enc_vol>;
         };
 
-        en_ctrl {
+        ru_ctrl {
             display-name = "Base";
             bindings = <
 &kp LC(GRAVE)      &kp LC(N1)  &kp LC(N2)  &kp LC(N3)        &kp LC(N4)     &kp LC(N5)                                 &kp LC(N6)  &kp LC(N7)     &kp LC(N8)      &kp LC(N9)     &kp LC(N0)    &kp LC(MINUS)
