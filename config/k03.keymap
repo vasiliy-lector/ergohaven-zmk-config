@@ -32,7 +32,7 @@
         tg_lang: tg_lang {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LG(SPACE)>;
+            bindings = <&kp CAPSLOCK>;
             label = "TG_LANG";
             wait-ms = <30>;
             tap-ms = <30>;
