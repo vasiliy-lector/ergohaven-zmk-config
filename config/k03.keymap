@@ -36,7 +36,7 @@
             label = "TG_LANG";
         };
 
-        en: en {
+        mo_lang: en {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings =
@@ -104,21 +104,21 @@
         nav_ru {
             display-name = "Nav";
             bindings = <
-&trans  &kp F1                &kp F2                 &kp F3            &kp F4             &kp F5                            &kp F6        &kp F7     &kp F8        &kp F9           &kp F10       &trans
-&trans  &kp N1                &kp NUMBER_2           &kp NUMBER_3      &kp NUMBER_4       &kp NUMBER_5                      &kp NUMBER_6  &kp N7     &kp N8        &kp N9           &kp NUMBER_0  &kp DEL
-&trans  &en LEFT_PARENTHESIS  &en RIGHT_PARENTHESIS  &en LEFT_BRACKET  &en RIGHT_BRACKET  &trans                            &kp LEFT      &kp DOWN   &kp UP_ARROW  &kp RIGHT_ARROW  &trans        &trans
-&trans  &en LT                &en GT                 &en LEFT_BRACE    &en RIGHT_BRACE    &trans        &kp F11    &kp F12  &kp HOME      &kp PG_DN  &kp PG_UP     &kp END          &trans        &trans
-                              &trans                 &trans            &trans             &trans        &trans     &trans   &mo 6         &trans     &trans        &trans
+&trans  &kp F1                &kp F2                 &kp F3                 &kp F4                  &kp F5                            &kp F6        &kp F7     &kp F8        &kp F9           &kp F10       &trans
+&trans  &kp N1                &kp NUMBER_2           &kp NUMBER_3           &kp NUMBER_4            &kp NUMBER_5                      &kp NUMBER_6  &kp N7     &kp N8        &kp N9           &kp NUMBER_0  &kp DEL
+&trans  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &mo_lang LEFT_BRACKET  &mo_lang RIGHT_BRACKET  &trans                            &kp LEFT      &kp DOWN   &kp UP_ARROW  &kp RIGHT_ARROW  &trans        &trans
+&trans  &mo_lang LT           &mo_lang GT            &mo_lang LEFT_BRACE    &mo_lang RIGHT_BRACE    &trans        &kp F11    &kp F12  &kp HOME      &kp PG_DN  &kp PG_UP     &kp END          &trans        &trans
+                              &trans                 &trans                 &trans                  &trans        &trans     &trans   &mo 6         &trans     &trans        &trans
             >;
         };
 
         sym_en {
             bindings = <
-&trans  &trans           &trans        &trans         &trans     &trans                         &trans     &trans          &trans             &trans          &trans     &trans
-&trans  &kp EXCLAMATION  &kp AT        &kp HASH       &kp DLLR   &kp PERCENT                    &kp CARET  &kp AMPS        &kp STAR           &kp MINUS       &kp EQUAL  &trans
-&trans  &kp BACKSLASH    &kp SLASH     &kp SEMICOLON  &kp COLON  &trans                         &trans     &kp APOSTROPHE  &kp DOUBLE_QUOTES  &kp UNDERSCORE  &kp PLUS   &trans
-&trans  &kp PIPE         &kp QUESTION  &kp GRAVE      &kp TILDE  &trans       &trans    &trans  &trans     &trans          &trans             &trans          &trans     &trans
-                         &trans        &trans         &trans     &mo 6        &trans    &trans  &trans     &trans          &trans             &trans
+&trans  &trans           &trans             &trans              &trans             &trans                         &trans     &trans        &trans         &trans          &trans     &trans
+&trans  &kp EXCLAMATION  &kp AT             &kp HASH            &kp DLLR           &kp PERCENT                    &kp CARET  &kp AMPS      &kp STAR       &kp MINUS       &kp EQUAL  &trans
+&trans  &kp GRAVE        &kp DOUBLE_QUOTES  &mo_lang RU_NUMERO  &kp SEMICOLON      &trans                         &kp COLON  &kp QUESTION  &kp BACKSLASH  &kp UNDERSCORE  &kp PLUS   &trans
+&trans  &kp TILDE        &kp APOSTROPHE     &trans              &mo_lang RU_RUBLE  &trans       &trans    &trans  &trans     &kp SLASH     &kp PIPE       &trans          &trans     &trans
+                         &trans             &trans              &trans             &mo 6        &trans    &trans  &trans     &trans        &trans         &trans
             >;
 
             display-name = "Symbols";
@@ -127,11 +127,11 @@
         sym_ru {
             display-name = "Symbols";
             bindings = <
-&trans  &trans           &trans        &trans         &trans     &trans                         &trans     &trans          &trans             &trans          &trans     &trans
-&trans  &kp EXCLAMATION  &en AT        &en HASH       &en DLLR   &en PERCENT                    &en CARET  &en AMPS        &en STAR           &kp MINUS       &kp EQUAL  &trans
-&trans  &en BACKSLASH    &en SLASH     &en SEMICOLON  &en COLON  &trans                         &trans     &en APOSTROPHE  &en DOUBLE_QUOTES  &kp UNDERSCORE  &kp PLUS   &trans
-&trans  &en PIPE         &en QUESTION  &en GRAVE      &en TILDE  &trans       &trans    &trans  &trans     &trans          &trans             &trans          &trans     &trans
-                         &trans        &trans         &trans     &mo 6        &trans    &trans  &trans     &trans          &trans             &trans
+&trans  &trans              &trans                &trans         &trans            &trans                            &trans          &trans           &trans            &trans             &trans        &trans
+&trans  &kp RU_EXCLAMATION  &mo_lang AT           &mo_lang HASH  &mo_lang DLLR     &kp RU_PERCENT                    &mo_lang CARET  &mo_lang AMPS    &kp RU_STAR       &kp RU_MINUS       &kp RU_EQUAL  &trans
+&trans  &mo_lang GRAVE      &kp RU_DOUBLE_QUOTES  &kp RU_NUMERO  &kp RU_SEMICOLON  &trans                            &kp RU_COLON    &kp RU_QUESTION  &kp RU_BACKSLASH  &kp RU_UNDERSCORE  &kp RU_PLUS   &trans
+&trans  &mo_lang TILDE      &mo_lang APOSTROPHE   &trans         &kp RU_RUBLE      &trans          &trans    &trans  &trans          &kp RU_SLASH     &mo_lang PIPE     &trans             &trans        &trans
+                            &trans                &trans         &trans            &mo 6           &trans    &trans  &trans          &trans           &trans            &trans
             >;
         };
 
@@ -147,7 +147,7 @@
             display-name = "Adjust";
         };
 
-        ru_cmd {
+        cmd_ru {
             display-name = "Base";
             bindings = <
 &kp LG(GRAVE)      &kp LG(N1)  &kp LG(N2)  &kp LG(N3)  &kp LG(N4)     &kp LG(N5)                                 &kp LG(N6)  &kp LG(N7)     &kp LG(N8)      &kp LG(N9)     &kp LG(N0)    &kp LG(MINUS)
@@ -166,7 +166,7 @@
                 <&enc_vol>;
         };
 
-        ru_ctrl {
+        ctrl_ru {
             display-name = "Base";
             bindings = <
 &kp LC(GRAVE)      &kp LC(N1)  &kp LC(N2)  &kp LC(N3)        &kp LC(N4)     &kp LC(N5)                                 &kp LC(N6)  &kp LC(N7)     &kp LC(N8)      &kp LC(N9)     &kp LC(N0)    &kp LC(MINUS)
